@@ -2,10 +2,16 @@ package hu.nye.progtech.torpedo.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Objects;
+
+/**
+ * Value Object for tables.
+ */
 
 public class TableVO {
-    private int tableSize = 10;
+
+
+    private final int tableSize = 10;
     private List<List<Character>> table = new ArrayList<>();
 
     {
@@ -17,20 +23,39 @@ public class TableVO {
             table.add(temp);
         }
     }
-    public void drawTable() {
-        System.out.print("  ");
-        for (char c = 'A'; c < 'A' + tableSize; c++) {
-            System.out.printf(" %c", c);
+
+
+    public int getTableSize() {
+        return tableSize;
+    }
+
+    public List<List<Character>> getTable() {
+        return table;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
         }
-        System.out.println();
-        AtomicInteger i = new AtomicInteger();
-        this.table.forEach(
-                row -> {
-                    String temp = i.incrementAndGet() > 9 ? "%d " : "%d  ";
-                    System.out.printf(temp, i.get());
-                    row.forEach(column -> System.out.printf("%c ", column));
-                    System.out.println();
-                }
-        );
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        TableVO tableVO = (TableVO) o;
+        return tableSize == tableVO.tableSize && Objects.equals(table, tableVO.table);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tableSize, table);
+    }
+
+    @Override
+    public String toString() {
+        return "TableVO{" +
+                "tableSize=" + tableSize +
+                ", table=" + table +
+                '}';
     }
 }
