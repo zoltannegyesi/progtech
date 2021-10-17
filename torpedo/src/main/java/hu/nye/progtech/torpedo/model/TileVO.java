@@ -8,8 +8,6 @@ import java.util.Objects;
 
 public class TileVO {
 
-
-
     private char value = 'X';
     private ShipVO ship;
 

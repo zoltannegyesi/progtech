@@ -17,13 +17,10 @@ public class UserInput {
      */
 
     public String nameScanning() {
-        System.out.print("Adja meg a jatekos nevet: ");
+        System.out.print("Adja meg a játékos nevét: ");
         return scanner.nextLine();
     }
 
-    /*public <T> T scanning () {
-
-    }*/
 
     @Override
     public boolean equals(Object o) {

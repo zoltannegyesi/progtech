@@ -5,6 +5,7 @@ import java.util.List;
 
 import hu.nye.progtech.torpedo.model.PlayerVO;
 import hu.nye.progtech.torpedo.model.TableVO;
+import hu.nye.progtech.torpedo.ui.TablePrinter;
 import hu.nye.progtech.torpedo.ui.UserInput;
 
 /**
@@ -18,31 +19,15 @@ public class Main {
      */
 
     public static void main(String[] args) {
-        /*TODO:
-           - jacocot visszakapcsolni/kikommentezni
-           - amit lehet, classot és fieldet finallá tenni
-           - kiíratást nem a tablevo-ban megcsinálni
-           - a kiíratásnál nem x-eket kiírni, hanem úgy tileokat létrehozni
-           és azok value-ját kiíratni
-           - esetleg keretes táblázatot csinálni a kiíratásnál
-
-         */
 
         UserInput userInput = new UserInput();
         PlayerVO player = new PlayerVO(userInput.nameScanning());
+        System.out.printf("Üdvözlünk a játékban %s!%n%n", player.getName());
         TableVO table = new TableVO();
-        // TablePrinter printer = new TablePrinter(table);
-        // System.out.println(printer.drawTable());
+        TablePrinter printer = new TablePrinter(10, table.getTable());
+        System.out.println("Kezdő táblád:");
+        System.out.println(printer.drawTable());
 
-        List<List<Character>> asd = new ArrayList<>();
-        ArrayList<Character> temp = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            temp.add('X');
-        }
-        for (int i = 0; i < 10; i++) {
-            asd.add(temp);
-        }
-        System.out.println(asd.toString());
 
     }
 }
