@@ -1,8 +1,5 @@
 package hu.nye.progtech.torpedo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hu.nye.progtech.torpedo.model.PlayerVO;
 import hu.nye.progtech.torpedo.model.TableVO;
 import hu.nye.progtech.torpedo.ui.TablePrinter;

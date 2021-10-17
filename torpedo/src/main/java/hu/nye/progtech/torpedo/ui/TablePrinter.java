@@ -10,7 +10,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TablePrinter {
 
 
-
     private final int tableSize;
     private final List<List<Character>> table;
 
@@ -38,6 +37,6 @@ public class TablePrinter {
                     tableText.append("\n");
                 }
         );
-         return tableText.toString();
+        return tableText.toString();
     }
 }
