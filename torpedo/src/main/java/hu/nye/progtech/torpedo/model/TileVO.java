@@ -2,6 +2,8 @@ package hu.nye.progtech.torpedo.model;
 
 import java.util.Objects;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * Value Object for tiles.
  */

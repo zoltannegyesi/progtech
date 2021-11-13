@@ -1,48 +1,38 @@
 package hu.nye.progtech.torpedo.ui;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Objects;
 import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * UI class to read from the standard input.
  */
 
+@Service
 public class UserInput {
 
+    private final BufferedReader reader;
 
-    Scanner scanner = new Scanner(System.in);
 
-    /**
-     * Scans the standard input for names.
-     */
-
-    public String nameScanning() {
-        System.out.print("Adja meg a játékos nevét: ");
-        return scanner.nextLine();
+    public UserInput() {
+        this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+    public String scanInput() {
+        String in = null;
+        try {
+            in = reader.readLine();
+        } catch (IOException e) {
+            System.err.println("Error happened during the reading");
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        UserInput userInput = (UserInput) o;
-        return Objects.equals(scanner, userInput.scanner);
+        return in;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(scanner);
-    }
 
-    @Override
-    public String toString() {
-        return "UserInput{" +
-                "scanner=" + scanner +
-                '}';
-    }
+
 }

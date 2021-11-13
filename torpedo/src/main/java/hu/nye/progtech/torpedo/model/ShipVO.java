@@ -2,6 +2,8 @@ package hu.nye.progtech.torpedo.model;
 
 import java.util.Objects;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * Value Object for ships.
  */
@@ -12,6 +14,7 @@ public class ShipVO {
     private final int size;
     private final int coordinateX;
     private final int coordinateY;
+
 
     public ShipVO(int size, int coordinateX, int coordinateY) {
         this.size = size;

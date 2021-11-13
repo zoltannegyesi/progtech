@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 public class TablePrinterTest {
 
-
+/*
     List<List<Character>> listSample = new ArrayList<>();
 
     private final String tableSample = "   A B C D E F G H I J\n" +
@@ -50,5 +50,5 @@ public class TablePrinterTest {
         // then
         assertEquals(tableSample, result);
     }
-
+*/
 }
