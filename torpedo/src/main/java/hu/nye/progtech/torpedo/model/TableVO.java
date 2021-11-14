@@ -18,7 +18,9 @@ public class TableVO {
 
 
     private final int tableSize = 10;
-    private List<List<Character>> table = new ArrayList<>();
+    private ArrayList<List<Character>> table = new ArrayList<>();
+
+
 
 
     @Override

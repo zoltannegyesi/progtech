@@ -38,6 +38,10 @@ public class Main {
      * Run the program.
      */
 
+    /* TODO
+    - if all ships are put down, write out: All ships are put down
+     */
+
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("hu.nye.progtech.torpedo");
         GameController gameController = context.getBean(GameController.class);

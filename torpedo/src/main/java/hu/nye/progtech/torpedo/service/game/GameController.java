@@ -36,12 +36,12 @@ public class GameController {
 
     public void createStartingTable() {
         TableVO tableVO = new TableVO();
-        List<Character> temp = new ArrayList<>();
-        List<List<Character>> table = new ArrayList<>();
+        ArrayList<List<Character>> table = new ArrayList<>();
         for (int i = 0; i < tableVO.getTableSize(); i++) {
-            temp.add('X');
-        }
-        for (int i = 0; i < tableVO.getTableSize(); i++) {
+            List<Character> temp = new ArrayList<>();
+            for (int j = 0; j < tableVO.getTableSize(); j++) {
+                temp.add(' ');
+            }
             table.add(temp);
         }
         tableVO.setTable(table);
