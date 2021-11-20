@@ -1,5 +1,7 @@
 package hu.nye.progtech.torpedo.service.interactions.impl;
 
+import java.util.HashSet;
+
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.service.Shooter;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
@@ -9,15 +11,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class Shoot implements Interaction {
 
-    private static final String EXIT_COMMAND = "shoot";
+    private static final String SHOOT_COMMAND = "shoot";
 
-    private final TablePrinter tablePrinter;
-    private final GameState game;
     private final Shooter shooter;
 
-    public Shoot(TablePrinter tablePrinter, GameState game, Shooter shooter) {
-        this.tablePrinter = tablePrinter;
-        this.game = game;
+    public Shoot(Shooter shooter) {
         this.shooter = shooter;
     }
 
@@ -28,6 +26,11 @@ public class Shoot implements Interaction {
 
     @Override
     public boolean isEqualToCommand(String in) {
-        return EXIT_COMMAND.equals(in);
+        return SHOOT_COMMAND.equals(in);
+    }
+
+    @Override
+    public String getName() {
+        return SHOOT_COMMAND;
     }
 }

@@ -29,4 +29,9 @@ public class Exit implements Interaction {
     public boolean isEqualToCommand(String in) {
         return EXIT_COMMAND.equals(in);
     }
+
+    @Override
+    public String getName() {
+        return EXIT_COMMAND;
+    }
 }

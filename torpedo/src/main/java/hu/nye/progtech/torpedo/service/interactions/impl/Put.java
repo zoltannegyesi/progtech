@@ -51,4 +51,9 @@ public class Put implements Interaction {
     public boolean isEqualToCommand(String in) {
         return PUT_COMMAND.equals(in);
     }
+
+    @Override
+    public String getName() {
+        return PUT_COMMAND;
+    }
 }

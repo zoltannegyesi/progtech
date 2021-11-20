@@ -32,11 +32,11 @@ public class ShipPutter {
         == shipSize-1 || Math.abs(coordinates.get(0).toCharArray()[1]
                 - coordinates.get(1).toCharArray()[1]) == shipSize-1) {
             tableVO.getTable()
-                    .get(coordinates.get(0).toCharArray()[0]-65)
-                    .set((int) coordinates.get(0).toCharArray()[1] - 49 , '+');
+                    .get((int) coordinates.get(0).toCharArray()[1] - 49)
+                    .set(coordinates.get(0).toCharArray()[0]-65, '+');
             tableVO.getTable()
-                    .get(coordinates.get(1).toCharArray()[0]-65)
-                    .set((int) coordinates.get(1).toCharArray()[1] - 49 , '+');
+                    .get((int) coordinates.get(1).toCharArray()[1] - 49)
+                    .set(coordinates.get(1).toCharArray()[0]-65, '+');
             System.out.println("Ship is put down");
             return true;
         } else {

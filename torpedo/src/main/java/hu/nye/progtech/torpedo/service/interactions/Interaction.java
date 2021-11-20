@@ -5,4 +5,6 @@ public interface Interaction {
     void process(String in);
 
     boolean isEqualToCommand(String in);
+
+    String getName();
 }

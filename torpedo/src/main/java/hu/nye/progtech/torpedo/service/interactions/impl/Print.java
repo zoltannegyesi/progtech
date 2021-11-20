@@ -29,4 +29,9 @@ public class Print implements Interaction {
     public boolean isEqualToCommand(String in) {
         return PRINT_COMMAND.equals(in);
     }
+
+    @Override
+    public String getName() {
+        return PRINT_COMMAND;
+    }
 }
