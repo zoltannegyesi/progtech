@@ -9,8 +9,7 @@ public class CoordinateConverter {
         // -65 and -49 -> to convert char to number -> ASCII table
         if (character >= 'A' && character <= 'J') {
             return (int) (character - 65);
-        }
-        else {
+        } else {
             return (int) (character - 49);
         }
     }

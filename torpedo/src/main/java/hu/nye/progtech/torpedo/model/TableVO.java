@@ -18,12 +18,8 @@ import org.springframework.stereotype.Repository;
 @Scope("prototype")
 public class TableVO {
 
-
     private final int tableSize = 10;
     private ArrayList<List<Character>> table = new ArrayList<>();
-
-
-
 
     @Override
     public boolean equals(Object o) {

@@ -2,15 +2,11 @@ package hu.nye.progtech.torpedo.model;
 
 import java.util.Objects;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
 /**
  * Value Object for the player.
  */
 
 public final class PlayerVO {
-
 
     private final String name;
     private int shipsRemaining = 0;

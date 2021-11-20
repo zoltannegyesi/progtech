@@ -18,7 +18,7 @@ public class AiShooter {
     public void shoot(Ai ai) {
         int x = rnd.nextInt(10);
         int y = rnd.nextInt(10);
-        if (gameState.getCurrentTable().getTable().get(y).get(x) == ' ' ) {
+        if (gameState.getCurrentTable().getTable().get(y).get(x) == ' ') {
             gameState.getCurrentTable().getTable().get(y).set(x, 'X');
             System.out.println("AI shot!");
         } else if (gameState.getCurrentTable().getTable().get(y).get(x) == 'o') {

@@ -3,7 +3,6 @@ package hu.nye.progtech.torpedo.service.interactions;
 import java.util.List;
 
 import hu.nye.progtech.torpedo.service.game.StepController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,9 +18,9 @@ public class InputHandler {
     public void handleInput(String in, StepController stepController) {
         interactions.stream()
                 .filter(interaction -> interaction.isEqualToCommand(in))
-                .forEach(interaction ->  {
-                    interaction.process(in, stepController);
-                }
-        );
+                .forEach(interaction -> {
+                            interaction.process(in, stepController);
+                        }
+                );
     }
 }

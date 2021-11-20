@@ -1,7 +1,5 @@
 package hu.nye.progtech.torpedo.service.interactions.impl;
 
-import javax.persistence.Id;
-
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.service.game.StepController;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;

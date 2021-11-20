@@ -2,11 +2,6 @@ package hu.nye.progtech.torpedo.service.ships.impl;
 
 import hu.nye.progtech.torpedo.service.ships.Ship;
 import lombok.Getter;
-import lombok.Setter;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Getter
@@ -36,4 +31,3 @@ public class Submarine implements Ship {
         return this.used;
     }
 }
-

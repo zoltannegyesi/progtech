@@ -1,15 +1,13 @@
 package hu.nye.progtech.torpedo.service.interactions.impl;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.service.game.StepController;
-import hu.nye.progtech.torpedo.service.ships.Ship;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.service.interactions.ShipPutter;
-import hu.nye.progtech.torpedo.ui.TablePrinter;
+import hu.nye.progtech.torpedo.service.ships.Ship;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +44,7 @@ public class Put implements Interaction {
                 .forEach(ship -> {
                     if (shipPutter.putShip(ship.getSize(), game.getCurrentTable())) {
                         ship.useShip();
-                        if(ships.stream().allMatch(Ship::isUsed)) {
+                        if (ships.stream().allMatch(Ship::isUsed)) {
                             System.out.println("All ships has been put down!");
                             interactions.stream()
                                     .filter(interaction -> interaction.getName().equals("put"))

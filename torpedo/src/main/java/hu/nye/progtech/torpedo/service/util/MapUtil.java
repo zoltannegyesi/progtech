@@ -1,7 +1,5 @@
 package hu.nye.progtech.torpedo.service.util;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import hu.nye.progtech.torpedo.model.GameState;

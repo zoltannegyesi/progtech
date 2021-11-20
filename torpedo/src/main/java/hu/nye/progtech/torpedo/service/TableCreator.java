@@ -10,15 +10,15 @@ import org.springframework.stereotype.Service;
 public class TableCreator {
 
     public void createTable(TableVO tableVO) {
-            ArrayList<List<Character>> table = new ArrayList<>();
-            for (int i = 0; i < tableVO.getTableSize(); i++) {
-                List<Character> temp = new ArrayList<>();
-                for (int j = 0; j < tableVO.getTableSize(); j++) {
-                    temp.add(' ');
-                }
-                table.add(temp);
+        ArrayList<List<Character>> table = new ArrayList<>();
+        for (int i = 0; i < tableVO.getTableSize(); i++) {
+            List<Character> temp = new ArrayList<>();
+            for (int j = 0; j < tableVO.getTableSize(); j++) {
+                temp.add(' ');
             }
-            tableVO.setTable(table);
+            table.add(temp);
+        }
+        tableVO.setTable(table);
 
     }
 }

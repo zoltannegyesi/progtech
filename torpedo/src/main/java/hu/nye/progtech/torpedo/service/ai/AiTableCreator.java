@@ -47,7 +47,7 @@ public class AiTableCreator {
                         }
 
                     case 1: //east
-                        if ((x + ship.getSize()-1) <= 9) {
+                        if ((x + ship.getSize() - 1) <= 9) {
                             if (!(ai.getTable().getTable().get(y).get(x + 1) == 'o')) {
                                 for (int i = 0; i < ship.getSize(); i++) {
                                     ai.getTable().getTable().get(y).set(x + i, 'o');
@@ -58,7 +58,7 @@ public class AiTableCreator {
                         }
 
                     case 2: // south
-                        if ((y + ship.getSize()-1) <= 9) {
+                        if ((y + ship.getSize() - 1) <= 9) {
                             if (!(ai.getTable().getTable().get(y + 1).get(x) == 'o')) {
                                 for (int i = 0; i < ship.getSize(); i++) {
                                     ai.getTable().getTable().get(y + i).set(x, 'o');
@@ -68,7 +68,7 @@ public class AiTableCreator {
                             }
                         }
                     case 3: //west
-                        if ((x - ship.getSize()-1) >= 0) {
+                        if ((x - ship.getSize() - 1) >= 0) {
                             if (!(ai.getTable().getTable().get(y).get(x - 1) == 'o')) {
                                 for (int i = 0; i < ship.getSize(); i++) {
                                     ai.getTable().getTable().get(y).set(x - i, 'o');

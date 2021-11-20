@@ -1,10 +1,6 @@
 package hu.nye.progtech.torpedo.service.game;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hu.nye.progtech.torpedo.model.GameState;
-import hu.nye.progtech.torpedo.model.TableVO;
 import hu.nye.progtech.torpedo.service.TableCreator;
 import hu.nye.progtech.torpedo.service.ai.Ai;
 import hu.nye.progtech.torpedo.service.util.MapUtil;
@@ -38,12 +34,10 @@ public class GameController {
         do {
             stepController.performStep();
             stepController.performAiStep();
-        } while(isGameRunning());
+        } while (isGameRunning());
     }
 
     private boolean isGameRunning() {
         return mapUtil.areAllShipsDestroyed(gameState.getCurrentTable());
     }
-
-
 }

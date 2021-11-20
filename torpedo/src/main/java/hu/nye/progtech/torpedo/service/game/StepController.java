@@ -1,12 +1,11 @@
 package hu.nye.progtech.torpedo.service.game;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 import hu.nye.progtech.torpedo.service.ai.Ai;
+import hu.nye.progtech.torpedo.service.interactions.InputHandler;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.ui.UserInput;
-import hu.nye.progtech.torpedo.service.interactions.InputHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

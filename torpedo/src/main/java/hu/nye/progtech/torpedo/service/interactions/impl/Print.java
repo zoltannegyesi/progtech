@@ -2,10 +2,8 @@ package hu.nye.progtech.torpedo.service.interactions.impl;
 
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.service.game.StepController;
-import hu.nye.progtech.torpedo.service.interactions.InputHandler;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.ui.TablePrinter;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -40,6 +38,7 @@ public class Print implements Interaction {
     public String getName() {
         return PRINT_COMMAND;
     }
+
     @Override
     public void setUsable(boolean bool) {
         this.usable = bool;

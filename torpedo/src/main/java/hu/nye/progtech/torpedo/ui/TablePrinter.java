@@ -6,7 +6,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.model.TableVO;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 /**
@@ -43,7 +42,7 @@ public class TablePrinter {
                     String temp = i.incrementAndGet() > 9 ? " " : "  ";
                     tableText.append(i.get()).append(temp).append('|');
                     row.forEach(column -> tableText.append(column).append(" "));
-                    tableText.deleteCharAt(tableText.length()-1);
+                    tableText.deleteCharAt(tableText.length() - 1);
                     tableText.append("|\n");
                 }
         );

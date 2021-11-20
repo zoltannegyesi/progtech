@@ -2,14 +2,13 @@ package hu.nye.progtech.torpedo.service.ships.impl;
 
 import hu.nye.progtech.torpedo.service.ships.Ship;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Getter
 @Service
 public class Carrier implements Ship {
     private final String name = "Carrier";
-    private final int size = 5 ;
+    private final int size = 5;
     private boolean used = false;
 
     @Override

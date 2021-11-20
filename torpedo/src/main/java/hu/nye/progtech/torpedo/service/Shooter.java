@@ -1,8 +1,5 @@
 package hu.nye.progtech.torpedo.service;
 
-import java.util.Arrays;
-import java.util.List;
-
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.service.ai.Ai;
 import hu.nye.progtech.torpedo.service.util.CoordinateConverter;

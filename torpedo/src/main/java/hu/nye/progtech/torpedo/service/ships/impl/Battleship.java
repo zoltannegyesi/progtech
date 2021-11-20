@@ -2,7 +2,6 @@ package hu.nye.progtech.torpedo.service.ships.impl;
 
 import hu.nye.progtech.torpedo.service.ships.Ship;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Getter
