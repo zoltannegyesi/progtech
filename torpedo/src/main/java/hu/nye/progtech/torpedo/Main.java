@@ -49,13 +49,12 @@ public class Main {
     - cannot shoot until all ships are put down
     - write out if an input is wrong(putting)
     - if találat, then print out it hit a ship
-    - printnél kiírni a saját táblánkat ahová letettük, és az ai lőtt, és az ai tábláját is, a lőtt koordinátákkal
+    - printnél kiírni a saját táblánkat ahová letettük, és ahova az ai lőtt, és az ai tábláját is, a lőtt koordinátákkal
      */
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("hu.nye.progtech.torpedo");
         GameController gameController = context.getBean(GameController.class);
-        gameController.createStartingTable();
         gameController.start();
     }
 

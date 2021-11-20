@@ -5,6 +5,8 @@ import java.util.List;
 
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.model.TableVO;
+import hu.nye.progtech.torpedo.service.TableCreator;
+import hu.nye.progtech.torpedo.service.ai.Ai;
 import hu.nye.progtech.torpedo.service.util.MapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +18,24 @@ public class GameController {
     private final StepController stepController;
     private final MapUtil mapUtil;
     private final GameState gameState;
+    private final TableCreator tableCreator;
+    private final Ai ai;
 
     @Autowired
-    public GameController(StepController stepController, MapUtil mapUtil, GameState gameState) {
+    public GameController(StepController stepController, MapUtil mapUtil, GameState gameState, TableCreator tableCreator, Ai ai) {
         this.stepController = stepController;
         this.mapUtil = mapUtil;
         this.gameState = gameState;
+        this.tableCreator = tableCreator;
+        this.ai = ai;
     }
 
     public void start() {
+        tableCreator.createTable(ai.getTable());
+        tableCreator.createTable(gameState.getCurrentTable());
        while(isGameRunning()) {
            stepController.performStep();
+           stepController.performAiStep();
        }
     }
 
@@ -34,18 +43,5 @@ public class GameController {
         return !mapUtil.areAllShipsDestroyed(gameState.getCurrentTable());
     }
 
-    public void createStartingTable() {
-        TableVO tableVO = new TableVO();
-        ArrayList<List<Character>> table = new ArrayList<>();
-        for (int i = 0; i < tableVO.getTableSize(); i++) {
-            List<Character> temp = new ArrayList<>();
-            for (int j = 0; j < tableVO.getTableSize(); j++) {
-                temp.add(' ');
-            }
-            table.add(temp);
-        }
-        tableVO.setTable(table);
-        gameState.setCurrentTable(tableVO);
-    }
 
 }
