@@ -9,4 +9,8 @@ public interface Interaction {
     boolean isEqualToCommand(String in);
 
     String getName();
+
+    void setUsable(boolean bool);
+
+    boolean isUsable();
 }

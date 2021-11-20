@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import hu.nye.progtech.torpedo.model.TableVO;
+import hu.nye.progtech.torpedo.service.interactions.impl.Put;
+import hu.nye.progtech.torpedo.service.interactions.impl.Shoot;
+import hu.nye.progtech.torpedo.service.ships.Ship;
 import hu.nye.progtech.torpedo.service.util.CoordinateConverter;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.stereotype.Service;

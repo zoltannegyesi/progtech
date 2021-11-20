@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class Exit implements Interaction {
 
     private static final String EXIT_COMMAND = "exit";
+    private boolean usable = true;
 
     private final TablePrinter tablePrinter;
     private final GameState game;
@@ -34,5 +35,15 @@ public class Exit implements Interaction {
     @Override
     public String getName() {
         return EXIT_COMMAND;
+    }
+
+    @Override
+    public void setUsable(boolean bool) {
+        this.usable = bool;
+    }
+
+    @Override
+    public boolean isUsable() {
+        return this.usable;
     }
 }

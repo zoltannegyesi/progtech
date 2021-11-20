@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class Print implements Interaction {
 
     private static final String PRINT_COMMAND = "print";
+    private boolean usable = true;
 
     private final TablePrinter tablePrinter;
     private final GameState game;
@@ -38,5 +39,14 @@ public class Print implements Interaction {
     @Override
     public String getName() {
         return PRINT_COMMAND;
+    }
+    @Override
+    public void setUsable(boolean bool) {
+        this.usable = bool;
+    }
+
+    @Override
+    public boolean isUsable() {
+        return this.usable;
     }
 }

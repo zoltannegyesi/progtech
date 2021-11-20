@@ -10,6 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrintAiTable implements Interaction {
     private static final String PRINTAITABLE_COMMAND = "aitable";
+    private boolean usable = true;
+
+    /**
+     * used for testing shooting
+     */
 
     private final TablePrinter tablePrinter;
     private final Ai ai;
@@ -33,5 +38,15 @@ public class PrintAiTable implements Interaction {
     @Override
     public String getName() {
         return PRINTAITABLE_COMMAND;
+    }
+
+    @Override
+    public void setUsable(boolean bool) {
+        this.usable = bool;
+    }
+
+    @Override
+    public boolean isUsable() {
+        return this.usable;
     }
 }

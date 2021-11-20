@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class Shoot implements Interaction {
 
     private static final String SHOOT_COMMAND = "shoot";
+    private boolean usable = false;
 
     private final Shooter shooter;
 
@@ -33,5 +34,15 @@ public class Shoot implements Interaction {
     @Override
     public String getName() {
         return SHOOT_COMMAND;
+    }
+
+    @Override
+    public void setUsable(boolean bool) {
+        this.usable = bool;
+    }
+
+    @Override
+    public boolean isUsable() {
+        return this.usable;
     }
 }

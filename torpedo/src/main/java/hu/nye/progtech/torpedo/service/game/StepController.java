@@ -32,7 +32,7 @@ public class StepController {
 
     public void performStep() {
         System.out.print("Commands: ");
-        interactions.forEach(interaction -> System.out.print(interaction.getName() + " "));
+        interactions.stream().filter(Interaction::isUsable).forEach(interaction -> System.out.print(interaction.getName() + " "));
         System.out.println();
         String in = userInput.scanInput();
         inputHandler.handleInput(in, this);

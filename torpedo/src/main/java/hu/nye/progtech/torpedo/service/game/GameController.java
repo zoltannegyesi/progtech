@@ -35,14 +35,14 @@ public class GameController {
         ai.createTable();
         tableCreator.createTable(gameState.getCurrentTable());
         tableCreator.createTable(gameState.getAiTable());
-       while(isGameRunning()) {
-           stepController.performStep();
-           stepController.performAiStep();
-       }
+        do {
+            stepController.performStep();
+            stepController.performAiStep();
+        } while(isGameRunning());
     }
 
     private boolean isGameRunning() {
-        return !mapUtil.areAllShipsDestroyed(gameState.getCurrentTable());
+        return mapUtil.areAllShipsDestroyed(gameState.getCurrentTable());
     }
 
 
