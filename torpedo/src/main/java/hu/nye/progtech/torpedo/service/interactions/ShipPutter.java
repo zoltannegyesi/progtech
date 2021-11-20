@@ -14,12 +14,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ShipPutter {
 
-    private Ship ship;
     private GameState gameState;
     private UserInput userInput;
 
-    public ShipPutter(Ship ship, GameState gameState, UserInput userInput) {
-        this.ship = ship;
+    public ShipPutter(GameState gameState, UserInput userInput) {
         this.gameState = gameState;
         this.userInput = userInput;
     }

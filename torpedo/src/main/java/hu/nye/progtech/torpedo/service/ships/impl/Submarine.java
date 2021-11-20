@@ -37,3 +37,4 @@ public class Submarine implements Ship {
         return this.used;
     }
 }
+

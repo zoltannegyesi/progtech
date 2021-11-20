@@ -35,7 +35,8 @@ public class Put implements Interaction {
 
         ships.stream()
                 .filter(ship -> !ship.isUsed())
-                .forEach(ship -> System.out.println(ship.getName()));
+                .forEach(ship -> System.out.print(ship.getName() + ", "));
+        System.out.println();
         String input = userInput.scanInput();
         ships.stream()
                 .filter(ship -> ship.getName().equals(input))

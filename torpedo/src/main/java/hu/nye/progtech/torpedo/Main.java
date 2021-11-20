@@ -39,7 +39,10 @@ public class Main {
      */
 
     /* TODO
+    - change all appearances for coordinates to coordinateConverter
     - if all ships are put down, write out: All ships are put down
+    - if we put down a 3+ long ship, all the + are put down, not only the 2 outer one
+    - if the given coordinates are too short print: Too short for this ship
      */
 
     public static void main(String[] args) {
