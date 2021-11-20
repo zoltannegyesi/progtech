@@ -35,12 +35,14 @@ public class Shooter {
             if (ai.getTable().getTable().get(y).get(x) == 'o') {
                 System.out.println("It's a hit!");
                 ai.getTable().getTable().get(y).set(x, '+');
+                gameState.getAiTable().getTable().get(y).set(x, '+');
             } else if (ai.getTable().getTable().get(y).get(x) == 'X' || ai.getTable().getTable().get(y).get(x) == '+') {
                 System.out.println("It has already been shot! Shoot again!");
                 this.shoot();
             } else {
                 System.out.println("Missed!");
                 ai.getTable().getTable().get(y).set(x, 'X');
+                gameState.getAiTable().getTable().get(y).set(x, 'X');
             }
 
         }

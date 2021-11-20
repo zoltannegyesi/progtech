@@ -11,9 +11,11 @@ import org.springframework.stereotype.Repository;
 public class GameState {
 
     private TableVO currentTable;
+    private TableVO aiTable;
 
-    public GameState(TableVO currentTable) {
+    public GameState(TableVO currentTable, TableVO aiTable) {
         this.currentTable = currentTable;
+        this.aiTable = aiTable;
     }
 
 }

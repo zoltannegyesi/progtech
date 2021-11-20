@@ -24,7 +24,9 @@ public class Print implements Interaction {
 
     @Override
     public void process(String in, StepController stepController) {
-        System.out.println(tablePrinter.drawTable(game.getCurrentTable()));
+
+        System.out.println("Your table:\n" + tablePrinter.drawTable(game.getCurrentTable()));
+        System.out.println("AI's table:\n" + tablePrinter.drawTable(game.getAiTable()));
         stepController.performStep();
     }
 
