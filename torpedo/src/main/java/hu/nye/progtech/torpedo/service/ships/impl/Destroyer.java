@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 @Getter
 @Service
-@Qualifier("Destroyer")
 public class Destroyer implements Ship {
     private final String name = "Destroyer";
     private final int size = 2;

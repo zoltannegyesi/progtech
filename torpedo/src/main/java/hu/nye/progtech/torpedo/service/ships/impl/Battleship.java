@@ -2,18 +2,14 @@ package hu.nye.progtech.torpedo.service.ships.impl;
 
 import hu.nye.progtech.torpedo.service.ships.Ship;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Getter
 @Service
-public class Submarine implements Ship {
-    private final String name = "Submarine";
-    private final int size = 3;
+public class Battleship implements Ship {
+    private final String name = "Battleship";
+    private final int size = 4;
     private boolean used = false;
 
     @Override
@@ -36,4 +32,3 @@ public class Submarine implements Ship {
         return this.used;
     }
 }
-
