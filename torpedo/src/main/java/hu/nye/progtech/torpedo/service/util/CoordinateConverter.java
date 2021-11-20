@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 public class CoordinateConverter {
 
     public int checkCoordinate(char character) {
+        // -65 and -49 -> to convert char to number -> ASCII table
         if (character >= 'A' && character <= 'J') {
             return (int) (character - 65);
         }
