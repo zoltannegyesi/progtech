@@ -27,7 +27,7 @@ public class StepController {
     }
 
     public void performAiStep() {
-        ai.createTable();
+        //ai shoots
     }
 
     public void performStep() {

@@ -22,8 +22,6 @@ public class Ai {
     }
 
     public void createTable() {
-        System.out.println("Ai's turn");
         aiTableCreator.createAiTable(this);
-        System.out.println(tablePrinter.drawTable(this.table));
     }
 }

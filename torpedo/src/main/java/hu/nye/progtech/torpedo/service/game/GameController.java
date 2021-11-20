@@ -32,6 +32,7 @@ public class GameController {
 
     public void start() {
         tableCreator.createTable(ai.getTable());
+        ai.createTable();
         tableCreator.createTable(gameState.getCurrentTable());
        while(isGameRunning()) {
            stepController.performStep();
