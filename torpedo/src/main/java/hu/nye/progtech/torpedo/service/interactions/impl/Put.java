@@ -1,6 +1,7 @@
 package hu.nye.progtech.torpedo.service.interactions.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import hu.nye.progtech.torpedo.model.GameState;
 import hu.nye.progtech.torpedo.service.ships.Ship;
@@ -31,20 +32,24 @@ public class Put implements Interaction {
 
     @Override
     public void process(String in) {
-        System.out.print("You can put down a: ");
 
-        ships.stream()
-                .filter(ship -> !ship.isUsed())
-                .forEach(ship -> System.out.print(ship.getName() + ", "));
-        System.out.println();
-        String input = userInput.scanInput();
-        ships.stream()
-                .filter(ship -> ship.getName().equals(input))
-                .forEach(ship -> {
-                    if (shipPutter.putShip(ship.getSize(), game.getCurrentTable())) {
-                        ship.useShip();
-                    }
-                });
+        List<Ship> shipsLeft = ships.stream().filter(ship -> !ship.isUsed()).collect(Collectors.toList());
+        if (shipsLeft.isEmpty()) {
+            System.out.println("All ships are put down!");
+        } else {
+            System.out.print("You can put down a: ");
+            shipsLeft.forEach(ship -> System.out.print(ship.getName() + ", "));
+            System.out.println();
+            String input = userInput.scanInput();
+            ships.stream()
+                    .filter(ship -> ship.getName().equals(input))
+                    .forEach(ship -> {
+                        if (shipPutter.putShip(ship.getSize(), game.getCurrentTable())) {
+                            ship.useShip();
+                        }
+                    });
+        }
+
     }
 
     @Override
