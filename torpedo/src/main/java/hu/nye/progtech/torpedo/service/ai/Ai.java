@@ -11,17 +11,23 @@ import org.springframework.stereotype.Service;
 @Setter
 public class Ai {
 
+    private final AiShooter aiShooter;
     private TableVO table;
     private final AiTableCreator aiTableCreator;
     private final TablePrinter tablePrinter;
 
-    public Ai(TableVO table, AiTableCreator aiTableCreator, TablePrinter tablePrinter) {
+    public Ai(TableVO table, AiTableCreator aiTableCreator, TablePrinter tablePrinter, AiShooter aiShooter) {
         this.table = table;
         this.aiTableCreator = aiTableCreator;
         this.tablePrinter = tablePrinter;
+        this.aiShooter = aiShooter;
     }
 
     public void createTable() {
         aiTableCreator.createAiTable(this);
+    }
+
+    public void shoot() {
+        this.aiShooter.shoot(this);
     }
 }

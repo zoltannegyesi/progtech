@@ -27,7 +27,7 @@ public class StepController {
     }
 
     public void performAiStep() {
-        //ai shoots
+        ai.shoot();
     }
 
     public void performStep() {
@@ -35,6 +35,6 @@ public class StepController {
         interactions.forEach(interaction -> System.out.print(interaction.getName() + " "));
         System.out.println();
         String in = userInput.scanInput();
-        inputHandler.handleInput(in);
+        inputHandler.handleInput(in, this);
     }
 }

@@ -20,9 +20,7 @@ public class Main {
     - input checking for all inputs(what to do with wrong inputs)
     - cannot shoot until all ships are put down
     - write out if an input is wrong(putting)
-    - if találat, then print out it hit a ship
     - printnél kiírni a saját táblánkat ahová letettük, és ahova az ai lőtt, és az ai tábláját is, a lőtt koordinátákkal
-    - ha egy pontba már lőttünk, akkor nem lehet mégegyszer, újra lehet lőni
     - ha az összes hajó le van téve, akkor a putot ne kiíratni az elején
      */
 

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import hu.nye.progtech.torpedo.model.GameState;
+import hu.nye.progtech.torpedo.service.ai.Ai;
 import hu.nye.progtech.torpedo.service.util.CoordinateConverter;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.stereotype.Service;
@@ -11,14 +12,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class Shooter {
 
-    GameState gameState;
-    UserInput userInput;
-    CoordinateConverter coordinateConverter;
+    private final GameState gameState;
+    private final UserInput userInput;
+    private final CoordinateConverter coordinateConverter;
+    private final Ai ai;
 
-    public Shooter(GameState gameState, UserInput userInput, CoordinateConverter coordinateConverter) {
+    public Shooter(GameState gameState, UserInput userInput, CoordinateConverter coordinateConverter, Ai ai) {
         this.gameState = gameState;
         this.userInput = userInput;
         this.coordinateConverter = coordinateConverter;
+        this.ai = ai;
     }
 
     public void shoot() {
@@ -29,7 +32,17 @@ public class Shooter {
         } else {
             int x = coordinateConverter.checkCoordinate(input[0]);
             int y = coordinateConverter.checkCoordinate(input[1]);
-            gameState.getCurrentTable().getTable().get(y).set(x, 'X');
+            if (ai.getTable().getTable().get(y).get(x) == 'o') {
+                System.out.println("It's a hit!");
+                ai.getTable().getTable().get(y).set(x, '+');
+            } else if (ai.getTable().getTable().get(y).get(x) == 'X' || ai.getTable().getTable().get(y).get(x) == '+') {
+                System.out.println("It has already been shot! Shoot again!");
+                this.shoot();
+            } else {
+                System.out.println("Missed!");
+                ai.getTable().getTable().get(y).set(x, 'X');
+            }
+
         }
     }
 }
