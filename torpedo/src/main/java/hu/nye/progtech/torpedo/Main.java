@@ -40,7 +40,6 @@ public class Main {
 
     /* TODO
     - change all appearances for coordinates to coordinateConverter
-    - make shooting work with 10 coordinates (like A10), and also ship putting
     - if all ships are put down, write out: All ships are put down
     - if the given coordinates are too short print: Too short for this ship
     - input checking for all inputs(what to do with wrong inputs)

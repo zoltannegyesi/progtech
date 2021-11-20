@@ -25,40 +25,54 @@ public class ShipPutter {
         String input = userInput.scanInput();
         List<String> coordinates = Arrays.asList(input.split(" "));
         int x1 = coordinateConverter.checkCoordinate(coordinates.get(0).toCharArray()[0]);
-        int y1 = coordinateConverter.checkCoordinate(coordinates.get(0).toCharArray()[1]);
         int x2 = coordinateConverter.checkCoordinate(coordinates.get(1).toCharArray()[0]);
-        int y2 = coordinateConverter.checkCoordinate(coordinates.get(1).toCharArray()[1]);
-        int firstCoordinateDifference = Math.abs(x1 - x2);
-        int secondCoordinateDifference = Math.abs(y1 - y2);
-        if (firstCoordinateDifference == shipSize - 1 || secondCoordinateDifference == shipSize - 1) {
-            if (x1 == x2) {
-                if (y1 > y2) {
-                    for (int i = 0; i < shipSize; i++) {
-                        tableVO.getTable().get(y1 - i).set(x1, 'o');
-                    }
-                } else {
-                    for (int i = 0; i < shipSize; i++) {
-                        tableVO.getTable().get(y1 + i).set(x1, 'o');
-                    }
-                }
+        int y1 = -1, y2 = -1;
+        if (coordinates.get(0).length() == 3 && coordinates.get(0).toCharArray()[1] == '1' && coordinates.get(0).toCharArray()[2] == '0') {
 
-            } else {
-                if (x1 > x2) {
-                    for (int i = 0; i < shipSize; i++) {
-                        tableVO.getTable().get(y1).set(x1-i, 'o');
-                    }
-                } else {
-                    for (int i = 0; i < shipSize; i++) {
-                        tableVO.getTable().get(y1).set(x1+i, 'o');
-                    }
-                }
-            }
-            System.out.println("Ship is put down");
-            return true;
+            y1 = 9;
         } else {
-            System.out.println("Too long for this ship");
-            return false;
+            y1 = coordinateConverter.checkCoordinate(coordinates.get(0).toCharArray()[1]);
         }
+        if (coordinates.get(1).length() == 3 && coordinates.get(1).toCharArray()[1] == '1' && coordinates.get(1).toCharArray()[2] == '0') {
+            y2 = 9;
+        } else {
+            y2 = coordinateConverter.checkCoordinate(coordinates.get(1).toCharArray()[1]);
+        }
+        if (y1 == -1 || y2 == -1) {
+            System.out.println("Invalid input");
+            return false;
+        } else {
+            int firstCoordinateDifference = Math.abs(x1 - x2);
+            int secondCoordinateDifference = Math.abs(y1 - y2);
+            if (firstCoordinateDifference == shipSize - 1 || secondCoordinateDifference == shipSize - 1) {
+                if (x1 == x2) {
+                    if (y1 > y2) {
+                        for (int i = 0; i < shipSize; i++) {
+                            tableVO.getTable().get(y1 - i).set(x1, 'o');
+                        }
+                    } else {
+                        for (int i = 0; i < shipSize; i++) {
+                            tableVO.getTable().get(y1 + i).set(x1, 'o');
+                        }
+                    }
 
+                } else {
+                    if (x1 > x2) {
+                        for (int i = 0; i < shipSize; i++) {
+                            tableVO.getTable().get(y1).set(x1 - i, 'o');
+                        }
+                    } else {
+                        for (int i = 0; i < shipSize; i++) {
+                            tableVO.getTable().get(y1).set(x1 + i, 'o');
+                        }
+                    }
+                }
+                System.out.println("Ship is put down");
+                return true;
+            } else {
+                System.out.println("Too long for this ship");
+                return false;
+            }
+        }
     }
 }
