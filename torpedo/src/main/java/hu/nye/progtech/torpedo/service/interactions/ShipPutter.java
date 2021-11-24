@@ -69,8 +69,11 @@ public class ShipPutter {
                 }
                 System.out.println("Ship is put down");
                 return true;
+            } else if (firstCoordinateDifference > shipSize - 1 || secondCoordinateDifference > shipSize - 1) {
+                System.out.println("Too long for this ship!");
+                return false;
             } else {
-                System.out.println("Too long for this ship");
+                System.out.println("Too short for this ship!");
                 return false;
             }
         }

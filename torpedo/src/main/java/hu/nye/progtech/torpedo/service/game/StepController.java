@@ -34,6 +34,9 @@ public class StepController {
         interactions.stream().filter(Interaction::isUsable).forEach(interaction -> System.out.print(interaction.getName() + " "));
         System.out.println();
         String in = userInput.scanInput();
-        inputHandler.handleInput(in, this);
+        if (!inputHandler.handleInput(in, this)) {
+            System.out.println("Wrong command! Try again!");
+            this.performStep();
+        }
     }
 }

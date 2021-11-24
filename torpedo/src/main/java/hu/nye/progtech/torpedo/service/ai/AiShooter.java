@@ -20,7 +20,7 @@ public class AiShooter {
         int y = rnd.nextInt(10);
         if (gameState.getCurrentTable().getTable().get(y).get(x) == ' ') {
             gameState.getCurrentTable().getTable().get(y).set(x, 'X');
-            System.out.println("AI shot!");
+            System.out.println("AI shot and missed!");
         } else if (gameState.getCurrentTable().getTable().get(y).get(x) == 'o') {
             gameState.getCurrentTable().getTable().get(y).set(x, 'X');
             System.out.println("AI shot and hit a ship");

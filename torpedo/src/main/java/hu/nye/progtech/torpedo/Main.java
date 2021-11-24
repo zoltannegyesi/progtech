@@ -16,9 +16,15 @@ public class Main {
 
     /* TODO
     - if wrong input on shooting, can shoot again without ai shooting
-    - if the given coordinates are too short print: Too short for this ship
+    - shooting out of range should not work
+    - shooting on 10 should work
+    - wrong shipname -> Not valid ship name
+    - shouldn't put , after last ship
     - input checking for all inputs(what to do with wrong inputs)
     - write out if an input is wrong(putting)
+    - write tests
+    - work with db (save, get)
+
      */
 
     public static void main(String[] args) {

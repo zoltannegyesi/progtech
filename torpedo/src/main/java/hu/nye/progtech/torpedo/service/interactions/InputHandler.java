@@ -1,6 +1,7 @@
 package hu.nye.progtech.torpedo.service.interactions;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import hu.nye.progtech.torpedo.service.game.StepController;
 import org.springframework.stereotype.Service;
@@ -15,12 +16,16 @@ public class InputHandler {
         this.interactions = interactions;
     }
 
-    public void handleInput(String in, StepController stepController) {
-        interactions.stream()
+    public boolean handleInput(String in, StepController stepController) {
+        List<Interaction> command = interactions.stream()
                 .filter(interaction -> interaction.isEqualToCommand(in))
-                .forEach(interaction -> {
-                            interaction.process(in, stepController);
-                        }
-                );
+                .collect(Collectors.toList());
+        if (command.isEmpty()) {
+            return false;
+        } else {
+            command.forEach(interaction -> interaction.process(in, stepController));
+            return true;
+        }
+
     }
 }
