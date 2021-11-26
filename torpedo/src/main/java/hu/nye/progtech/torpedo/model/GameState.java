@@ -4,6 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Model for storing the AI's and Player's table.
+ */
+
 @Repository
 @Getter
 @Setter

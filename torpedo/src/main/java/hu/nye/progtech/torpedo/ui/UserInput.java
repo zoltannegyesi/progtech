@@ -20,6 +20,12 @@ public class UserInput {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
+
+    /**
+     * Scans input and returns the read input.
+     *
+     * @return String.
+     */
     public String scanInput() {
         String in = null;
         try {

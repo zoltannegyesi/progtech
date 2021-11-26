@@ -3,8 +3,13 @@ package hu.nye.progtech.torpedo.service.ai;
 import java.util.List;
 import java.util.Random;
 
+import hu.nye.progtech.torpedo.model.Ai;
 import hu.nye.progtech.torpedo.service.ships.Ship;
 import org.springframework.stereotype.Service;
+
+/**
+ * Component for creating AI's table.
+ */
 
 @Service
 public class AiTableCreator {
@@ -17,6 +22,12 @@ public class AiTableCreator {
         rand = new Random();
     }
 
+    /**
+     * Creates AI's table,
+     * and puts down the ships randomly.
+     *
+     * @param ai ai, that's table is being created.
+     */
     public void createAiTable(Ai ai) {
         ships.forEach(ship -> {
             boolean cannotPutDown = true;
@@ -32,52 +43,58 @@ public class AiTableCreator {
                         x = x1;
                         y = y1;
                     }
-
                 }
-                switch (rand.nextInt(4)) {
-                    case 0: //north
-                        if ((y - ship.getSize()) >= 0) {
-                            if (!(ai.getTable().getTable().get(y - 1).get(x) == 'o')) {
-                                for (int i = 0; i < ship.getSize(); i++) {
-                                    ai.getTable().getTable().get(y - i).set(x, 'o');
+                boolean put = false;
+                while (!put) {
+                    switch (rand.nextInt(4)) {
+                        case 0: //north
+                            if ((y - ship.getSize()) >= 0) {
+                                if (!(ai.getTable().getTable().get(y - 1).get(x) == 'o')) {
+                                    for (int i = 0; i < ship.getSize(); i++) {
+                                        ai.getTable().getTable().get(y - i).set(x, 'o');
+                                    }
+                                    cannotPutDown = false;
+                                    put = true;
                                 }
-                                cannotPutDown = false;
-                                break;
                             }
-                        }
+                            break;
 
-                    case 1: //east
-                        if ((x + ship.getSize() - 1) <= 9) {
-                            if (!(ai.getTable().getTable().get(y).get(x + 1) == 'o')) {
-                                for (int i = 0; i < ship.getSize(); i++) {
-                                    ai.getTable().getTable().get(y).set(x + i, 'o');
+                        case 1: //east
+                            if ((x + ship.getSize() - 1) <= 9) {
+                                if (!(ai.getTable().getTable().get(y).get(x + 1) == 'o')) {
+                                    for (int i = 0; i < ship.getSize(); i++) {
+                                        ai.getTable().getTable().get(y).set(x + i, 'o');
+                                    }
+                                    cannotPutDown = false;
+                                    put = true;
                                 }
-                                cannotPutDown = false;
-                                break;
                             }
-                        }
+                            break;
 
-                    case 2: // south
-                        if ((y + ship.getSize() - 1) <= 9) {
-                            if (!(ai.getTable().getTable().get(y + 1).get(x) == 'o')) {
-                                for (int i = 0; i < ship.getSize(); i++) {
-                                    ai.getTable().getTable().get(y + i).set(x, 'o');
+                        case 2: // south
+                            if ((y + ship.getSize() - 1) <= 9) {
+                                if (!(ai.getTable().getTable().get(y + 1).get(x) == 'o')) {
+                                    for (int i = 0; i < ship.getSize(); i++) {
+                                        ai.getTable().getTable().get(y + i).set(x, 'o');
+                                    }
+                                    cannotPutDown = false;
+                                    put = true;
                                 }
-                                cannotPutDown = false;
-                                break;
+
                             }
-                        }
-                    case 3: //west
-                        if ((x - ship.getSize() - 1) >= 0) {
-                            if (!(ai.getTable().getTable().get(y).get(x - 1) == 'o')) {
-                                for (int i = 0; i < ship.getSize(); i++) {
-                                    ai.getTable().getTable().get(y).set(x - i, 'o');
+                            break;
+                        default: //west
+                            if ((x - ship.getSize() - 1) >= 0) {
+                                if (!(ai.getTable().getTable().get(y).get(x - 1) == 'o')) {
+                                    for (int i = 0; i < ship.getSize(); i++) {
+                                        ai.getTable().getTable().get(y).set(x - i, 'o');
+                                    }
+                                    cannotPutDown = false;
+                                    put = true;
                                 }
-                                cannotPutDown = false;
-                                break;
                             }
-                        }
-                        break;
+                            break;
+                    }
                 }
             }
         });

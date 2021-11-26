@@ -6,6 +6,10 @@ import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.ui.TablePrinter;
 import org.springframework.stereotype.Service;
 
+/**
+ * Command used exit the game.
+ */
+
 @Service
 public class Exit implements Interaction {
 

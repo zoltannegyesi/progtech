@@ -5,6 +5,10 @@ import hu.nye.progtech.torpedo.service.game.StepController;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import org.springframework.stereotype.Service;
 
+/**
+ * Command used to request the shooting method for the player.
+ */
+
 @Service
 public class Shoot implements Interaction {
 

@@ -8,6 +8,10 @@ import hu.nye.progtech.torpedo.service.util.CoordinateConverter;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.stereotype.Service;
 
+/**
+ * Component responsible for putting down the ships.
+ */
+
 @Service
 public class ShipPutter {
 
@@ -19,6 +23,15 @@ public class ShipPutter {
         this.coordinateConverter = coordinateConverter;
     }
 
+    /**
+     * Checks if the input coordinate is valid,
+     * and puts down the given ship,
+     * and sets the ship to used.
+     *
+     * @param shipSize the size of the ship.
+     * @param tableVO  the table that the ship is put to.
+     * @return boolean.
+     */
     public boolean putShip(int shipSize, TableVO tableVO) {
         System.out.println("The ship is " + shipSize + " tile long.");
         System.out.println("Type in the starting and the ending coordinate: ");
@@ -26,7 +39,8 @@ public class ShipPutter {
         List<String> coordinates = Arrays.asList(input.split(" "));
         int x1 = coordinateConverter.checkCoordinate(coordinates.get(0).toCharArray()[0]);
         int x2 = coordinateConverter.checkCoordinate(coordinates.get(1).toCharArray()[0]);
-        int y1 = -1, y2 = -1;
+        int y1 = -1;
+        int y2 = -1;
         if (coordinates.get(0).length() == 3 && coordinates.get(0).toCharArray()[1] == '1' && coordinates.get(0).toCharArray()[2] == '0') {
 
             y1 = 9;

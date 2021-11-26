@@ -6,8 +6,18 @@ import java.util.List;
 import hu.nye.progtech.torpedo.model.TableVO;
 import org.springframework.stereotype.Service;
 
+/**
+ * Component to create starting tables.
+ */
+
 @Service
 public class TableCreator {
+
+    /**
+     * Generates empty tables.
+     *
+     * @param tableVO which is being created.
+     */
 
     public void createTable(TableVO tableVO) {
         ArrayList<List<Character>> table = new ArrayList<>();

@@ -1,11 +1,14 @@
 package hu.nye.progtech.torpedo.service;
 
+import hu.nye.progtech.torpedo.model.Ai;
 import hu.nye.progtech.torpedo.model.GameState;
-import hu.nye.progtech.torpedo.service.ai.Ai;
-import hu.nye.progtech.torpedo.service.game.StepController;
 import hu.nye.progtech.torpedo.service.util.CoordinateConverter;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.stereotype.Service;
+
+/**
+ * Component for player shooting.
+ */
 
 @Service
 public class Shooter {
@@ -21,6 +24,11 @@ public class Shooter {
         this.coordinateConverter = coordinateConverter;
         this.ai = ai;
     }
+
+    /**
+     *  Checks if an input is correct
+     *  and sets the given coordinate to a '+' or 'X'.
+     */
 
     public void shoot() {
         System.out.println("Type in the coordinate to shoot");

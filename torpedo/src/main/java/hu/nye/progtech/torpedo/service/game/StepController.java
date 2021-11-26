@@ -2,12 +2,16 @@ package hu.nye.progtech.torpedo.service.game;
 
 import java.util.List;
 
-import hu.nye.progtech.torpedo.service.ai.Ai;
+import hu.nye.progtech.torpedo.model.Ai;
 import hu.nye.progtech.torpedo.service.interactions.InputHandler;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+/**
+ * Component that performs a step.
+ */
 
 @Service
 public class StepController {
@@ -29,6 +33,10 @@ public class StepController {
         ai.shoot();
     }
 
+    /**
+     * Method that lists the available commands,
+     * and calls the command handling method.
+     */
     public void performStep() {
         System.out.print("Commands: ");
         interactions.stream().filter(Interaction::isUsable).forEach(interaction -> System.out.print(interaction.getName() + " "));

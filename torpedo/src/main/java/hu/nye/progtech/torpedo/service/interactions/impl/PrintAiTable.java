@@ -1,19 +1,20 @@
 package hu.nye.progtech.torpedo.service.interactions.impl;
 
-import hu.nye.progtech.torpedo.service.ai.Ai;
+import hu.nye.progtech.torpedo.model.Ai;
 import hu.nye.progtech.torpedo.service.game.StepController;
 import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.ui.TablePrinter;
 import org.springframework.stereotype.Service;
 
+/**
+ * Command used to request the printing of AI's map.
+ * Only used for testing.
+ */
+
 @Service
 public class PrintAiTable implements Interaction {
     private static final String PRINTAITABLE_COMMAND = "aitable";
     private boolean usable = true;
-
-    /**
-     * used for testing shooting
-     */
 
     private final TablePrinter tablePrinter;
     private final Ai ai;

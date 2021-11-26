@@ -6,8 +6,12 @@ import hu.nye.progtech.torpedo.service.interactions.Interaction;
 import hu.nye.progtech.torpedo.ui.TablePrinter;
 import org.springframework.stereotype.Service;
 
-@Service
+/**
+ * Command used to request the printing of the
+ * players map and the shot enemy map.
+ */
 
+@Service
 public class Print implements Interaction {
 
     private static final String PRINT_COMMAND = "print";

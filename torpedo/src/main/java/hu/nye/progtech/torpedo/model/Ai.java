@@ -1,10 +1,17 @@
-package hu.nye.progtech.torpedo.service.ai;
+package hu.nye.progtech.torpedo.model;
 
 import hu.nye.progtech.torpedo.model.TableVO;
+import hu.nye.progtech.torpedo.service.ai.AiShooter;
+import hu.nye.progtech.torpedo.service.ai.AiTableCreator;
 import hu.nye.progtech.torpedo.ui.TablePrinter;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
+
+
+/**
+ * Model for the AI.
+ */
 
 @Service
 @Getter

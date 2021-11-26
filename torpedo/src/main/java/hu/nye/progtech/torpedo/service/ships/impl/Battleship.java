@@ -4,6 +4,11 @@ import hu.nye.progtech.torpedo.service.ships.Ship;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
+/**
+ * A Battleship Ship, that is 4 tiles long.
+ */
+
+
 @Getter
 @Service
 public class Battleship implements Ship {

@@ -10,9 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-    /**
-     * Run the program.
-     */
+
 
     /* TODO
     - if wrong input on shooting, can shoot again without ai shooting
@@ -27,6 +25,10 @@ public class Main {
 
      */
 
+    /**
+     * Run the program,
+     * and create the ApplicationContext for Spring.
+     */
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("hu.nye.progtech.torpedo");
         GameController gameController = context.getBean(GameController.class);

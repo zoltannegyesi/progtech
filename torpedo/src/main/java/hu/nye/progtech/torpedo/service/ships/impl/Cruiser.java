@@ -4,6 +4,11 @@ import hu.nye.progtech.torpedo.service.ships.Ship;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
+/**
+ * A Cruiser Ship, that is 3 tiles long.
+ */
+
+
 @Getter
 @Service
 public class Cruiser implements Ship {

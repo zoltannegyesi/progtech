@@ -11,6 +11,10 @@ import hu.nye.progtech.torpedo.service.ships.Ship;
 import hu.nye.progtech.torpedo.ui.UserInput;
 import org.springframework.stereotype.Service;
 
+/**
+ * Command used to request the putting method.
+ */
+
 @Service
 public class Put implements Interaction {
     private static final String PUT_COMMAND = "put";

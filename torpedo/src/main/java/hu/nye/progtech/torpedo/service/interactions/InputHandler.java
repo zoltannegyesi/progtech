@@ -6,6 +6,10 @@ import java.util.stream.Collectors;
 import hu.nye.progtech.torpedo.service.game.StepController;
 import org.springframework.stereotype.Service;
 
+/**
+ * Component for handling the input for the commands.
+ */
+
 @Service
 public class InputHandler {
 
@@ -16,6 +20,15 @@ public class InputHandler {
         this.interactions = interactions;
     }
 
+    /**
+     * Method used to call the input command.
+     *
+     *
+     * @param in                the input.
+     * @param stepController    the controller, that used it.
+     * @return boolean.
+     *
+     */
     public boolean handleInput(String in, StepController stepController) {
         List<Interaction> command = interactions.stream()
                 .filter(interaction -> interaction.isEqualToCommand(in))
